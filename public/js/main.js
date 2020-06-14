@@ -744,35 +744,35 @@
     }
 
 // App screenshot carousel Home 9
-    if ($('.swiper-container.two').length > 0) {
-        var swiper = new Swiper('.swiper-container.two', {
-            pagination: '.swiper-pagination',
-            paginationClickable: true,
-            effect: 'coverflow',
-            loop: true,
-            centeredSlides: true,
-            slidesPerView: 'auto',
-            coverflow: {
-                rotate: 0,
-                stretch: 100,
-                depth: 150,
-                modifier: 1.5,
-                slideShadows: false,
-            }
-        });
-    }
-
-    $('.Count').each(function () {
-        var $this = $(this);
-
-        jQuery({Counter: 0}).animate({Counter: $this.text()}, {
-            duration: 10000,
-            easing: 'swing',
-            step: function () {
-                $this.text(Math.ceil(this.Counter));
-            }
-        });
-
-    })
+//     if ($('.swiper-container.two').length > 0) {
+//         var swiper = new Swiper('.swiper-container.two', {
+//             pagination: '.swiper-pagination',
+//             paginationClickable: true,
+//             effect: 'coverflow',
+//             loop: true,
+//             centeredSlides: true,
+//             slidesPerView: 'auto',
+//             coverflow: {
+//                 rotate: 0,
+//                 stretch: 100,
+//                 depth: 150,
+//                 modifier: 1.5,
+//                 slideShadows: false,
+//             }
+//         });
+//     }
+//
+//     $('.Count').each(function () {
+//         var $this = $(this);
+//
+//         jQuery({Counter: 0}).animate({Counter: $this.text()}, {
+//             duration: 10000,
+//             easing: 'swing',
+//             step: function () {
+//                 $this.text(Math.ceil(this.Counter));
+//             }
+//         });
+//
+//     })
 
 })(jQuery);

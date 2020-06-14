@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Apps Craft - Creative Agency Template by pixiefy">
+    <meta name="description" content="Fingo Page - Ubah belanja jadi penghasilan">
     <meta name="author" content="pixiefy">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
@@ -31,13 +31,73 @@
     <link rel="stylesheet" href="style.css">
     <!-- Main Style.css Stylesheet -->
     <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- Resposive.css Stylesheet -->
-</head>
-<body class="apps-craft-v5">
+    <style>
+        /*Cookie Consent Begin*/
+        #cookieConsent {
+            background-color: rgba(20, 20, 20, 0.8);
+            min-height: 26px;
+            font-size: 14px;
+            color: #ccc;
+            line-height: 26px;
+            padding: 8px 0 8px 30px;
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: none;
+            z-index: 9999;
+        }
 
+        #cookieConsent a {
+            color: #4B8EE7;
+            text-decoration: none;
+        }
+
+        #closeCookieConsent {
+            float: right;
+            display: inline-block;
+            cursor: pointer;
+            height: 20px;
+            width: 20px;
+            margin: -15px 0 0 0;
+            font-weight: bold;
+        }
+
+        #closeCookieConsent:hover {
+            color: #FFF;
+        }
+
+        #cookieConsent a.cookieConsentOK {
+            background-color: #F1D600;
+            color: #000;
+            display: inline-block;
+            border-radius: 5px;
+            padding: 0 20px;
+            cursor: pointer;
+            float: right;
+            margin: 0 60px 0 10px;
+        }
+
+        #cookieConsent a.cookieConsentOK:hover {
+            background-color: #E0C91F;
+        }
+
+        /*Cookie Consent End*/
+    </style>
+</head>
+<body onload="readFireStore()" class="apps-craft-v5">
+<div id="cookieConsent">
+    <div id="closeCookieConsent">x</div>
+    <div id="cookieConsent2"> This website is using cookies. .</div>
+    <a class="cookieConsentOK">Ok</a>
+</div>
 <!-- Apps Craft Body Start -->
 <div id="preloader"></div>
 
+<!-- The actual snackbar -->
 <!-- Apps Craft Main Menu -->
 <header class="apps-craft-main-menu-area" id="apps-craft-menus">
     <div class="container">
@@ -74,6 +134,7 @@
             </div>
         </div>
     </div>
+
 </header> <!-- .apps-craft-main-menu END -->
 
 <!-- Apps Craft Welcome Section -->
@@ -343,7 +404,7 @@
                                 <div class="col-md-6 col-sm-6 col-xs-6">
                                     <div class="apps-craft-single-fun">
                                         <i class="zmdi zmdi-account zmdi-hc-fw"></i>
-                                        <h5 class="Count">40000</h5>
+                                        <h5 id="visitors" class="Count">40000</h5>
                                         <h6>Visitors</h6>
                                     </div> <!-- .apps-craft-single-fun END -->
                                 </div>
@@ -351,7 +412,7 @@
                                 <div class="col-md-6 col-sm-6 col-xs-6">
                                     <div class="apps-craft-single-fun">
                                         <i class="zmdi zmdi-download zmdi-hc-fw"></i>
-                                        <h5 class="Count">29888</h5>
+                                        <h5 id="download" class="Count">29888</h5>
                                         <h6>Downloads</h6>
                                     </div> <!-- .apps-craft-single-fun END -->
                                 </div>
@@ -747,7 +808,7 @@
                 <h2>launching fingo malaysia</h2>
             </div> <!-- .apps-craft-section-heading END -->
             <div class="content-margin-top">
-                <div class="col-md-12 col-sm-12 col-xs-6 apps-craft-team" >
+                <div class="col-md-12 col-sm-12 col-xs-6 apps-craft-team">
                     <div class="apps-craft-single-team wow fadeIn" data-wow-delay="200ms" itemscope
                          itemtype="http://schema.org/ImageGallery">
                         <div style="text-align: center;" class="col-xs-12 col-sm-12 col-md-12 ">
@@ -947,30 +1008,22 @@
 </section> <!-- .apps-craft-faq-section END -->
 
 <!-- js File Start -->
-
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+<script defer src="js/firebase_query.js"></script>
 
 <script>
-    var firebaseConfig = {
-        apiKey: "AIzaSyCybdtq8DVhQQBmo8txvdaamQKxhr_JQcg",
-        authDomain: "fingo-app-00001.firebaseapp.com",
-        databaseURL: "https://fingo-app-00001.firebaseio.com",
-        projectId: "fingo-app-00001",
-        storageBucket: "fingo-app-00001.appspot.com",
-        messagingSenderId: "843677860849",
-        appId: "1:843677860849:web:8b78bdfbb396bdbd897a50",
-        measurementId: "G-QJLDDDH2HT"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-</script>
+    function on() {
+        document.getElementById("overlay").style.display = "block";
+    }
 
+    function off() {
+        document.getElementById("overlay").style.display = "none";
+    }
+</script>
 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 <!-- jquery-3.1.1.min.js -->
 <script type="text/javascript" src="js/jquery.ajaxchimp.min.js"></script>
