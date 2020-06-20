@@ -2731,6 +2731,17 @@ body.apps-craft-v7 .apps-craft-position-rel .layer img {
 	height: 600px;
 	display: table;
 }
+
+.apps-craft-video-section .apps-craft-video-section-inner .container .apps-craft-video-content  {
+	max-width: 1280px;
+	max-width: 720px;
+	width:420px;
+	height:315px;
+}
+.apps-craft-video-section-inner .container iframe {
+	height:100%;
+	width:100%;
+}
 .apps-craft-video-section-inner {
 	display: table-cell;
 	vertical-align: middle;
