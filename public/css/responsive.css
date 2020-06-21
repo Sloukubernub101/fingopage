@@ -1032,11 +1032,30 @@ body.apps-craft-v6 .apps-craft-video-content {
 
 
 /*      Small Mobile Layout: 320px. */
+.apps-craft-video-section .apps-craft-video-section-inner .container{
+    width:100%;
+}
+.apps-craft-video-section .apps-craft-video-section-inner .container .apps-craft-video-content  {
+    width:80vw;
+    height:315px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.apps-craft-video-section .apps-craft-video-section-inner .container .apps-craft-video-content iframe {
+    width:100%;
+    height:100%;
+}
+
 @media only screen and (max-width: 479px) {
 .apps-craft-team {
     width: 100%;
     margin-top: 35px;
 }
-
+.apps-craft-team-section .container .apps-craft-single-team iframe {
+    height:100%;
+    width:100%;
+}
 
 }
