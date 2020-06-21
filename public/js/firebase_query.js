@@ -41,15 +41,6 @@ function readFireStore() {
     db.collection("hitcount").doc('joining').onSnapshot(function (doc) {
         if (doc.data().IPv4 === ipV4) {
 
-            // document.getElementById("cookieConsent2").innerText = 'Seseorang menyertai dari ' + doc.data().city + ', ' + doc.data().state;
-            //
-            // $(document).ready(function () {
-            //     setTimeout(function () {
-            //         $("#cookieConsent").fadeIn(200);
-            //     }, 4000);
-            // });
-
-
         } else {
 
             document.getElementById("cookieConsent2").innerText = 'Seseorang menyertai dari ' + doc.data().city + ', ' + doc.data().state;
