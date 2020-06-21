@@ -42,9 +42,7 @@ function readFireStore() {
         if (doc.data().IPv4 === ipV4) {
 
         } else {
-
             document.getElementById("cookieConsent2").innerText = 'Seseorang menyertai dari ' + doc.data().city + ', ' + doc.data().state;
-
             $(document).ready(function () {
                 setTimeout(function () {
                     $("#cookieConsent").fadeIn(200);
