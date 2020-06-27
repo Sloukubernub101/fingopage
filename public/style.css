@@ -2813,6 +2813,11 @@ body.apps-craft-v6 .apps-craft-video-content a i {
 	background-attachment: fixed;
 }
 
+.apps-craft-fun-factory-section .container .apps-craft-tbl .apps-craft-tbl-c {
+	
+	/* vertical-align: middle; */
+}
+
 .fun-factorey-paralx-bg-1 {
 	width: 100%;
 	background-repeat: repeat-x;
@@ -2986,7 +2991,9 @@ figure.apps-craft-why-chose-img img:last-child {
 	outline: none;
 }
 
-/*======================================================== 
+
+
+/*========================================================
 		9.1 Apps Craft Showcase (V6)
 ==========================================================*/
 .showcase-wrap {
@@ -3288,7 +3295,7 @@ blockquote.team-quote p {
 	text-align: center;
 	background-color: #fff;
 	/*box-shadow: 0 0 35px rgba(0,0,0,.09);*/
-	padding: 60px 5px;
+	/* padding: 60px 5px; */
 	background-repeat: no-repeat;
 	background-position: bottom;
 	background-size: contain;
@@ -3462,6 +3469,9 @@ blockquote.team-quote p {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=83)";
 }
 
+
+
+
 /*============================================================= 
 		13. Apps Craft now Available 
 =======================================================================================*/
@@ -3608,7 +3618,9 @@ body.apps-craft-v6 .apps-craft-subscribe-content {
 
 .apps-craft-faq-section {
 	background-color: #F4F4F4;
+
 }
+
 .apps-craft-faq-section .apps-craft-team-img img {
 	border-radius: 50%;
 	height: 355px;
@@ -3640,7 +3652,7 @@ body.apps-craft-v6 .apps-craft-subscribe-content {
 .apps-craft-accordion .panel-default>.panel-heading+.panel-collapse>.panel-body{
 	border-top-color: transparent;
 	border: 0px solid;
-	padding: 22px 42px;
+	padding: 0px 42px;
 }
 .apps-craft-accordion .panel-title{
 	width: 100%;

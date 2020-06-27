@@ -72,7 +72,13 @@ body.apps-craft-v7 .apps-craft-position-rel {
 .apps-craft-welcome-content h1 {
     font-size: 3.0em;
     line-height: 1.2;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
+    margin-bottom:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: center;
+    text-align: center;
 }
 .apps-craft-welcome-section-v5 .apps-craft-position-rel {
     width: 230px;
@@ -727,9 +733,13 @@ body.apps-craft-solid-color #apps-craft-menu {
 .apps-craft-welcome-content {
     text-align: center;
     width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .apps-craft-single-about {
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
 }
 .apps-craft-welcome-content h1,
 .apps-craft-welcome-section-v18 .apps-craft-welcome-content h1 {
@@ -829,7 +839,7 @@ figure.apps-craft-why-chose-img img:last-child {
     bottom: 0;
 }
 .apps-craft-single-pricing {
-    margin-top: 35px;
+    /* margin-top: 35px; */
     max-width: 450px;
     margin-left: auto;
     margin-right: auto;
@@ -1015,8 +1025,17 @@ body.apps-craft-v6 .apps-craft-video-content {
 .apps-craft-welcome-section.apps-craft-welcome-section-v5:after {
     background-position: bottom center;
 }
-
-
+.apps-craft-faq-section .container{
+    margin:0;
+    padding:0;
+}
+.apps-craft-faq-section .apps-craft-accordion .apps-craft-single-team .apps-craft-team-img img {
+    height:200px;
+    width:200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.apps-craft-pricing-section .apps-craft-single-pricing 
 	
 }
 
