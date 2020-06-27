@@ -50,7 +50,6 @@ function readFireStore() {
             });
 
 
-
         }
         document.getElementById('visitors').innerText = doc.data().count;
     });
