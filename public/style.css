@@ -3402,6 +3402,7 @@ blockquote.team-quote p {
 .apps-craft-team-img {
 	position: relative;
 	margin-bottom: 90px;
+	/* width:100vw; */
 }
 .apps-craft-team-img .apps-craft-team-hover {
 	position: absolute;
@@ -3429,6 +3430,7 @@ blockquote.team-quote p {
 }
 .apps-craft-team-bio {
 	text-align: center;
+	/* width:100vw; */
 }
 .apps-craft-team-bio h2 {
 	margin: 0;
